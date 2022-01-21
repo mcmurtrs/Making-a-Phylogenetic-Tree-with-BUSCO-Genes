@@ -167,4 +167,6 @@ clustalw
 http://ugene.net/
 
 
-# Step 10: 
+# Step 10: Follow the steps at the tutorial listed below to make your tree with RAxML
+
+https://github.com/mcmurtrs/mcmurtrs.github.io/blob/main/ML%20Phylogenetic%20Tree/README.md
