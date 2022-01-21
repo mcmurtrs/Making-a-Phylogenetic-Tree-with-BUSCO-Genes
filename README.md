@@ -87,15 +87,47 @@ for f in os.listdir('.'):
 ```
 
 # Step 6: Add a prefix onto the genes that passed to attach them to each sample
-- Right after you have finished deleted the genes we don't want add the prefix and cp all the files to a new directory called BUSCO_GENES
+- After you have finished deleted the genes we don't want add the prefix and cp all the files to a new directory called BUSCO_GENES
 
 ```
 bash
 #for file in *.faa; do mv "$file" "AP13_$file"; done;
-for file in *.faa; do mv "$file" "AP13|$file"; done;
+for file in *.faa; do mv "$file" "AP7_$file"; done;
 ```
 
-# Step 7: Concatenate all the fasta files together into one mega fasta file:
+
+## Step 7: Adding a unique number to the beginning of each file name
+``` n=1; for f in *; do mv "$f" "$((n++))_$f"; done ```
+
+
+
+# Step 8:  Deleting the first line of each fasta file 
+``` sed -i '1d' *.faa ```
+
+
+ 
+# Step 9: Adding the unique name of the file to the first line of all files
+- In order for clustalw to perform our multiple sample alignment, each fasta header needs to be unique.
+- We can perform this within bash with sed.
+ 
+ ``` sed -i '1F' *.faa ```
+
+## Step 10: Adding '>' to the first line of each file
+- This is again done for formatting purposes for clustalw. 
+- Clustalw will ignore the first line that starts with a '>' symbol.
+- The first line of our header should then look like the screenshot below.
+- We have the carrot symbol, the unique id number, and our sample ID so we know what gene belongs to each sample. 
+``` sed -i '1s/^/>/' * ```
+
+![image](https://user-images.githubusercontent.com/49656044/150464632-c78b89fa-1a08-4abe-99bd-d09809aa3d9d.png)
+
+ 
+## Concat all fasta files into one fasta file
+``` 
+
+
+
+# Step 8: Concatenate all the fasta files together into one mega fasta file:
 - An example of the combined fasta file can be found in the data folder. (INSERT DATA FOLDER AND COPY OF FASTA HERE!!) 
 
 ```
