@@ -168,5 +168,9 @@ http://ugene.net/
 
 
 # Step 10: Follow the steps at the tutorial listed below to make your tree with RAxML
+![image](https://user-images.githubusercontent.com/49656044/150468162-a95d1044-f186-492e-b160-9c1d7b41f3bb.png)
+
+- You can skip step 1 and go straight to step 2.
+- Step 1 is used if you are starting with a vcf file and not a fasta file.
 
 https://github.com/mcmurtrs/mcmurtrs.github.io/blob/main/ML%20Phylogenetic%20Tree/README.md
