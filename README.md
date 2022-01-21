@@ -121,6 +121,14 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 
 ![image](https://user-images.githubusercontent.com/49656044/150464632-c78b89fa-1a08-4abe-99bd-d09809aa3d9d.png)
 
+
+## Step 11: Copy the freshly altered fasta files to the central directory called  
+ 
+ ```
+ cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
+ cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/C2_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences/*.faa .
+
+ ```
  
 ## Concat all fasta files into one fasta file
 ``` 
