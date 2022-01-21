@@ -131,26 +131,30 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 
  ```
  
-## Concat all fasta files into one fasta file
+## Step 12: Concatenate all fasta files into one combined fasta file
+- If everythin worked correctly, your rad new fasta file should look something similar to the screenshot below.
+- We are now ready to move on to the alignment with clustalw!!
 ``` 
-
-
-
-# Step 8: Concatenate all the fasta files together into one mega fasta file:
-- An example of the combined fasta file can be found in the data folder. (INSERT DATA FOLDER AND COPY OF FASTA HERE!!) 
+cat *.faa* > combinedFasta.faa
 
 ```
-cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/ALL_BUSCOS
-cat *.faa > combinedFasta.faa
+![image](https://user-images.githubusercontent.com/49656044/150466416-cbe637d2-d316-496b-b2d3-b29c588f538b.png)
+
+
+
+
+# Step 8: Run alignment on combined fasta file with Clustalw
+- Manual:
+http://www.clustal.org/download/clustalw_help.txt
+![image](https://user-images.githubusercontent.com/49656044/150466652-62016012-ea3c-4d13-b616-d25e49b28661.png)
+- Helpful video on how to run clustalw:
+https://www.youtube.com/watch?v=LWKsu8VqJKg
 
 ```
-
-# Step 8: Run alignment on combined fasta file with MAFFT
-
+cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
+clustalw
 ```
-mafft combinedFasta.faa > finalFasta.faa
 
-```
 
 # Step 9: View the alignment with NCBI Multiple Sequence Alignment Viewer:
 
