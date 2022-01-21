@@ -9,15 +9,21 @@ A majority of the steps come from the following tutorials:
 - https://github.com/chrishah/phylogenomics-intro
 - https://bioinformaticsworkbook.org/phylogenetics/reconstructing-species-phylogenetic-tree-with-busco-genes-using-maximum-liklihood-method.html#gsc.tab=0
 
-## Step 1: Setting up working directory
-- Copy all the BUSCO "$SAMPLEID_full_table.tsv" files to the working directory directory 
+## Step 1: Setting up working directory, and centralizing all of our data
+- Copy all the BUSCO "SAMPLEID_full_table.tsv" files to the working directory 
+```
+cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree
+cd pre_filter
 
 ```
-/nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree
-busco -i /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/De_novo_assembly/PWT131/contigs.fasta -l basidiomycota_odb10 -o PWT131_Busco -m geno
+
+## Step 2: Copy all fasta files into Tree directory
+
 ```
 
-## Step 2: Setup ingroup and outgroup text files.
+```
+
+## Step 3: Setup ingroup and outgroup text files.
 - In our scenario we have 98 ingroups samples and 11 outgroup samples.
 - Note a small amount of editing will need to be done to each file to delete the samples that are not in the in or out groups
 - Use "ctrl + k" (on windows) to delete a line in nano editor
@@ -40,7 +46,7 @@ ls *.tsv > outgroup.txt
 ![image](https://user-images.githubusercontent.com/49656044/149902729-d29508b9-f619-417c-b636-c8f06f7d78d4.png)
 
 
-## Step 3: Look for all BUSCO genes present across all samples and filter them:
+## Step 4: Look for all BUSCO genes present across all samples and filter them:
 - We are filtering to help prevent false positive gene calls making their way into our dataset.  We are also filtering for quality. We will be using the python file called "evaluate.py" that can be found in the "scripts" folder of this repository.  If you would like to know more about this script please see the tutorial linked at the top of this page. 
 - **** Parameters that we are filtering on are as follows: 
 - No more than one sample missing for either the in- or the outgroup
@@ -56,7 +62,7 @@ python3 evaluate.py -i ingroup.txt -o outgroup.txt --max_mis_in 1 --max_mis_out 
 ![image](https://user-images.githubusercontent.com/49656044/149902531-95302af0-c9cf-4334-9a19-495060ea809c.png)
 
 
-# Step 4: Make a list of all the BUSCO genes that passed the filtering process:
+# Step 5: Make a list of all the BUSCO genes that passed the filtering process:
 - The previous command outputs a file called "summary.tsv" that lists all of the Busco genes that passed. We will now use another python script to make a list of these genes. 
 
 ![image](https://user-images.githubusercontent.com/49656044/149904872-a13b6da5-4c3a-4a9a-8f83-f46f362469fc.png)
@@ -69,7 +75,7 @@ python3 evaluate.py -i ingroup.txt -o outgroup.txt --max_mis_in 1 --max_mis_out 
 python3 buscoList.py summary.tsv filteredGenes.txt
 ```
 
-# Step 5: Delete all genes that didn't pass the filtering test:
+# Step 6: Delete all genes that didn't pass the filtering test:
 - We need to get rid of all the genes that didn't pass our test.
 - This next bash script will loop through each single copy BUSCO directory (i.e. SAMPLE1_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences) and delete genes that didn't pass the test.
 - The only caveots are that you need do this in every busco directory so if you have a lot you might want to automate it.
@@ -90,7 +96,7 @@ for f in os.listdir('.'):
         os.unlink(f)
 ```
 
-# Step 6: Add a prefix onto the genes that passed to attach them to each sample
+# Step 7: Add a prefix onto the genes that passed to attach them to each sample
 - After you have finished deleted the genes we don't want add the prefix and cp all the files to a new directory called BUSCO_GENES
 
 ```
@@ -100,23 +106,23 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 ```
 
 
-## Step 7: Adding a unique number to the beginning of each file name
+## Step 8: Adding a unique number to the beginning of each file name
 ``` n=1; for f in *; do mv "$f" "$((n++))_$f"; done ```
 
 
 
-# Step 8:  Deleting the first line of each fasta file 
+# Step 9:  Deleting the first line of each fasta file 
 ``` sed -i '1d' *.faa ```
 
 
  
-# Step 9: Adding the unique name of the file to the first line of all files
+# Step 10: Adding the unique name of the file to the first line of all files
 - In order for clustalw to perform our multiple sample alignment, each fasta header needs to be unique.
 - We can perform this within bash with sed.
  
  ``` sed -i '1F' *.faa ```
 
-## Step 10: Adding '>' to the first line of each file
+## Step 11: Adding '>' to the first line of each file
 - This is again done for formatting purposes for clustalw. 
 - Clustalw will ignore the first line that starts with a '>' symbol.
 - The first line of our header should then look like the screenshot below.
@@ -127,7 +133,7 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 ![image](https://user-images.githubusercontent.com/49656044/150464632-c78b89fa-1a08-4abe-99bd-d09809aa3d9d.png)
 
 
-## Step 11: Copy the freshly altered fasta files to the central directory called  
+## Step 12: Copy the freshly altered fasta files to the central directory called  
  
  ```
  cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
@@ -135,7 +141,7 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 
  ```
  
-## Step 12: Concatenate all fasta files into one combined fasta file
+## Step 13: Concatenate all fasta files into one combined fasta file
 - If everythin worked correctly, your rad new fasta file should look something similar to the screenshot below.
 - We are now ready to move on to the alignment with clustalw!!
 ``` 
@@ -147,7 +153,7 @@ cat *.faa* > combinedFasta.faa
 
 
 
-# Step 8: Run alignment on combined fasta file with Clustalw
+# Step 14: Run alignment on combined fasta file with Clustalw
 ![image](https://user-images.githubusercontent.com/49656044/150466652-62016012-ea3c-4d13-b616-d25e49b28661.png)
 
 - Manual:
@@ -163,7 +169,7 @@ clustalw
 ```
 
 
-# Step 9: View the alignment with Unipro Ugene
+# Step 15: View the alignment with Unipro Ugene
 ![image](https://user-images.githubusercontent.com/49656044/150467410-09b70372-b7f6-4e77-ba3e-53c0d34b75ff.png)
 
 
@@ -171,7 +177,7 @@ clustalw
 http://ugene.net/
 
 
-# Step 10: Follow the steps at the tutorial listed below to make your tree with RAxML
+# Step 16: Follow the steps at the tutorial listed below to make your tree with RAxML
 ![image](https://user-images.githubusercontent.com/49656044/150468162-a95d1044-f186-492e-b160-9c1d7b41f3bb.png)
 
 - You can skip step 1 and go straight to step 2.
