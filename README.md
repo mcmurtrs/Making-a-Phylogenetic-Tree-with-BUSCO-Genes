@@ -117,6 +117,7 @@ for file in *.faa; do mv "$file" "AP7_$file"; done;
 - Clustalw will ignore the first line that starts with a '>' symbol.
 - The first line of our header should then look like the screenshot below.
 - We have the carrot symbol, the unique id number, and our sample ID so we know what gene belongs to each sample. 
+
 ``` sed -i '1s/^/>/' * ```
 
 ![image](https://user-images.githubusercontent.com/49656044/150464632-c78b89fa-1a08-4abe-99bd-d09809aa3d9d.png)
