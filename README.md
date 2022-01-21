@@ -1,5 +1,9 @@
 # Making a Phylogenetic Tree with BUSCO genes
 
+## Videos showing the steps
+### Steps 1 and 2:
+https://www.youtube.com/watch?v=gilA49YwSM4
+
 A majority of the steps come from the following tutorials:
 
 - https://github.com/chrishah/phylogenomics-intro
