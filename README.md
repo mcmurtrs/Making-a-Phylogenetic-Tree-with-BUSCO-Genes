@@ -144,19 +144,27 @@ cat *.faa* > combinedFasta.faa
 
 
 # Step 8: Run alignment on combined fasta file with Clustalw
+![image](https://user-images.githubusercontent.com/49656044/150466652-62016012-ea3c-4d13-b616-d25e49b28661.png)
+
 - Manual:
 http://www.clustal.org/download/clustalw_help.txt
-![image](https://user-images.githubusercontent.com/49656044/150466652-62016012-ea3c-4d13-b616-d25e49b28661.png)
+
 - Helpful video on how to run clustalw:
 https://www.youtube.com/watch?v=LWKsu8VqJKg
 
 ```
 cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
 clustalw
+
 ```
 
 
-# Step 9: View the alignment with NCBI Multiple Sequence Alignment Viewer:
+# Step 9: View the alignment with Unipro Ugene
+![image](https://user-images.githubusercontent.com/49656044/150467410-09b70372-b7f6-4e77-ba3e-53c0d34b75ff.png)
+
+
+- Download link:
+http://ugene.net/
 
 https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog
 
