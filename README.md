@@ -166,6 +166,5 @@ clustalw
 - Download link:
 http://ugene.net/
 
-https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog
 
 # Step 10: 
