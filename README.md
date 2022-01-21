@@ -2,8 +2,8 @@
 
 A majority of the steps come from the following tutorials:
 
-https://github.com/chrishah/phylogenomics-intro
-https://bioinformaticsworkbook.org/phylogenetics/reconstructing-species-phylogenetic-tree-with-busco-genes-using-maximum-liklihood-method.html#gsc.tab=0
+- https://github.com/chrishah/phylogenomics-intro
+- https://bioinformaticsworkbook.org/phylogenetics/reconstructing-species-phylogenetic-tree-with-busco-genes-using-maximum-liklihood-method.html#gsc.tab=0
 
 ## Step 1: Setting up working directory
 - Copy all the BUSCO "$SAMPLEID_full_table.tsv" files to the working directory directory 
