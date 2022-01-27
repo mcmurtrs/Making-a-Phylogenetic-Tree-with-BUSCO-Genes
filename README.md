@@ -3,7 +3,7 @@
 - All data being used for this tutorial can be found within the "data" folder within this directory.
 - All custom scripts used within this tutorial are found in the "scripts" folder in this directory.
 
-The date contained in this tutorial includes 5 seperate species of fungi. These fungi are often found within forest ecosystems. The names of the five fungi are:
+The date contained in this tutorial includes five seperate but closely related species of fungi. These fungi are often found within forest ecosystems. The names of the five fungi are:
 
 - Coniferiporia sulphurascens (AP7)
 - Coniferiporia weirii (PFC545)
