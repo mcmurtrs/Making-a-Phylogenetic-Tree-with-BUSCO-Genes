@@ -108,8 +108,22 @@ for f in os.listdir('.'):
 ```
 
 
-# Step 7: Add a prefix onto the genes that passed to attach them to each sample
+# Step 7: Delete the header line of each fasta file:
 
+```
+sed -i '1d' *.faa
+```
+- Starting files look like this:
+
+![image](https://user-images.githubusercontent.com/49656044/151456354-86e82dfd-a90c-40c6-9c9c-b738d1d29ac2.png)
+
+
+- We want them all to look like this:
+
+![image](https://user-images.githubusercontent.com/49656044/151456154-5796f228-f5e6-490d-a092-72befba8b902.png)
+
+
+# Step 8: Delete the header line of each fasta file:
 
 
 
