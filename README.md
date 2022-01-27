@@ -35,7 +35,7 @@ cd pre_filter
 ```
 
 ## Step 3: Setup ingroup and outgroup text files.
-- In our scenario we have 98 ingroups samples and 11 outgroup samples.
+- In our scenario we have 2 ingroups samples and 3 outgroup samples.
 - Note a small amount of editing will need to be done to each file to delete the samples that are not in the in or out groups
 - Use "ctrl + k" (on windows) to delete a line in nano editor
 - In this simple example the samples in the "ingroup.txt" file are Coniferiporia sulphurascens species whereas the single sample in the "outgroup.txt" file is a Coniferiporia weirri sample.
