@@ -1,5 +1,16 @@
 # Making a Phylogenetic Tree with BUSCO genes
 
+- All data being used for this tutorial can be found within the "data" folder within this directory.
+- All custom scripts used within this tutorial are found in the "scripts" folder in this directory.
+
+The date contained in this tutorial includes 5 seperate species of fungi. These fungi are often found within forest ecosystems. The names of the five fungi are:
+
+- Coniferiporia sulphurascens
+- Coniferiporia weirii
+- Phellinus lamaensis
+- Phellinus noxious
+- Phellinus pini
+
 ## Videos showing the steps
 ### Steps 1 and 2:
 https://www.youtube.com/watch?v=gilA49YwSM4
