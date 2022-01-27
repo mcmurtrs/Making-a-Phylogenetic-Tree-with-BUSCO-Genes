@@ -107,6 +107,15 @@ for f in os.listdir('.'):
         os.unlink(f)
 ```
 
+
+# Step 7: Add a prefix onto the genes that passed to attach them to each sample
+
+
+
+
+# EXTRA STEPS THAT ARE NOT REQUIRED BUT MAY BE USEFUL FOR OTHER ANALYSIS:
+
+
 # Step 7: Add a prefix onto the genes that passed to attach them to each sample
 - After you have finished deleted the genes we don't want add the prefix and cp all the files to a new directory called BUSCO_GENES
 
