@@ -79,12 +79,13 @@ for f in files:
                 if not ID in args.BUSCOs:
 #                    lines.append("%s\tnot on list" %ID)
 #                    print(lines[-1])
+                    continue
             if not ID in data:
                 data[ID] = {group: {f: 1}}
 
             if not group in data[ID]:
                 data[ID][group] = {f: int(1)}
-
+            
             if not f in data[ID][group]:
                 data[ID][group][f] = int(1)
             else:
@@ -115,7 +116,7 @@ for B in data.keys():
     if len(paracounts) % 2:
         med = sorted(paracounts)[int(len(paracounts)/2)]
     else:
-      med = (sorted(paracounts)[int(len(paracounts)/2)] + sorted(paracounts)[int(len(paracounts)/2)-1]) / 2
+        med = (sorted(paracounts)[int(len(paracounts)/2)] + sorted(paracounts)[int(len(paracounts)/2)-1]) / 2
     line = "%s\t%i\t%i\t%s\t%f\t%f" %(B, ingroupcount, outgroupcount, sorted(paracounts), sum(paracounts)/len(paracounts), med)
     if (len(ingroup) - ingroupcount) > maxmisin or (len(outgroup) - outgroupcount) > maxmisout:
         line+="\tfail (count)"
@@ -127,7 +128,7 @@ for B in data.keys():
             line+="\tfail"
             if (sum(paracounts)/len(paracounts) > maxavg):
                 line+=" (average)"
-
+            
             if (med > maxmed):
                 line+=" (median)"
     if args.outfile:
@@ -149,7 +150,3 @@ else:
         if not l.startswith("#"):
             print(l)
 print(lines[-1]+"\n")
-
-
-
-

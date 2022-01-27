@@ -1,6 +1,6 @@
+
 #!/local/cluster/bin/python3
 import sys
-
 #bring in user input file
 wc_python_file = sys.argv[0]
 wc_data_file = sys.argv[1]
@@ -27,16 +27,25 @@ for rawLine in dF_handle:
 	
 	#Identify items in BUSCO summary file
 	BUSCO_ID = lineparts_list[0]
-	N = lineparts_list[1]
-	INGROUP = lineparts_list[2]
-	OUTGROUP = lineparts_list[3]
+	INGROUP = lineparts_list[1]
+	OUTGROUP = lineparts_list[2]
+	N = lineparts_list[3]
 	PARALOG = lineparts_list[4]
 	COUNTS = lineparts_list[5]
 	TEST = lineparts_list[6]
 
-
+	
 
 	#GENES THAT PASS THE TEST
-	if TEST == "pass":
+	#if (float(BUSCO_ID) > 1):
+	#	output_file.write(f"Busco ID is:{BUSCO_ID} \n")
+
+	#GENES THAT PASS THE TEST
+	if TEST == "pass" and (float(INGROUP) == 2) and (float(OUTGROUP) -- 3):
 		output_file.write(f"{BUSCO_ID}.faa \n")
 
+
+
+	#Backup
+	#if TEST == "pass":
+	#	output_file.write(f"{BUSCO_ID}.faa \n")
