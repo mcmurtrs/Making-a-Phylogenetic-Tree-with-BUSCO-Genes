@@ -9,7 +9,7 @@ The date contained in this tutorial includes 5 seperate species of fungi. These 
 - Coniferiporia weirii (PFC545)
 - Phellinus lamaensis
 - Phellinus noxious
-- Phellinus pini
+- Porodaedalea pini
 
 ## Videos showing the steps
 ### Steps 1 and 2:
