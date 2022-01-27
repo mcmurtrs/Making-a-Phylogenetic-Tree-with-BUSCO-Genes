@@ -5,8 +5,8 @@
 
 The date contained in this tutorial includes 5 seperate species of fungi. These fungi are often found within forest ecosystems. The names of the five fungi are:
 
-- Coniferiporia sulphurascens
-- Coniferiporia weirii
+- Coniferiporia sulphurascens (AP7)
+- Coniferiporia weirii (PFC545)
 - Phellinus lamaensis
 - Phellinus noxious
 - Phellinus pini
