@@ -130,14 +130,35 @@ sed -i '1d' *.faa
 cat *.faa* > combinedFasta_C_weirri.fna
 cat *.faa* > combinedFasta_P_lamaensis.fna
 ```
-
+# Pickup back here for video #5!!!!
 # Step 8: Move all concatenated files with .fna ending to a new directory
 
 ```
 cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/combinedFastas
-cp 
+cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/P_noxious_genes/combinedFasta_P_noxious.fna .
 
 ```
+
+
+# Step 8: Concatenate all the fasta files ending in .fna to a new fasta file ending in .faa
+
+```
+cat *.faa* > combinedFasta_C_weirri.fna
+
+```
+
+# Step 9: Run multiple sequence alignment with mafft
+
+```
+mafft .....
+# Output is in:
+/nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/combinedFastas_copy
+```
+
+# Step 10: Open file in mesquite to visually inspect it
+- blah blah blah
+
+# Step 11: Export the file for RAxML using mesquite, move file back to cluster and run RAxML
 
 
 
