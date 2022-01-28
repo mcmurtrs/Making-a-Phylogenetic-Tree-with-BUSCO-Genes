@@ -123,7 +123,21 @@ sed -i '1d' *.faa
 ![image](https://user-images.githubusercontent.com/49656044/151456154-5796f228-f5e6-490d-a092-72befba8b902.png)
 
 
-# Step 8: Delete the header line of each fasta file:
+# Step 8: Concatenate all the fasta files for each sample and change the ending of the file name to .fna
+- For this example we will be doing this five times. Once for each group of fasta files that we have. 
+
+```
+cat *.faa* > combinedFasta_C_weirri.fna
+cat *.faa* > combinedFasta_P_lamaensis.fna
+```
+
+# Step 8: Move all concatenated files with .fna ending to a new directory
+
+```
+cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/combinedFastas
+cp 
+
+```
 
 
 
