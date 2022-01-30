@@ -144,7 +144,7 @@ cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_fil
 # Step 8: Concatenate all the fasta files ending in .fna to a new fasta file ending in .faa
 
 ```
-cat *.faa* > combinedFasta_C_weirri.fna
+cat *.fna* > combinedFasta_C_weirri.faa
 
 ```
 
