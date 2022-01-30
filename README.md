@@ -28,10 +28,11 @@ cd pre_filter
 
 ```
 
-## Step 2: Copy all single fasta files into Tree directory
+## Step 2: Copy all "single_copy_busco_sequences" directories into Tree directory and rename to appropriate sample name
 
 ```
-cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/De_novo/C_sulphurascens_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences/*.faa .
+cp -r /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/De_novo/C_sulphurascens_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences .
+mv single_copy_busco_sequences C_sulphurascens 
 ```
 
 ## Step 3: Setup ingroup and outgroup text files.
