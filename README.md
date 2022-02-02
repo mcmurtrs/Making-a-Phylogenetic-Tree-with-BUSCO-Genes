@@ -109,6 +109,23 @@ for f in os.listdir('.'):
 ```
 
 
+# Step 8: Check to ensure that there are equal amounts of genes within each gene file.
+- To count the number of files in a directory use:
+```
+ls | wc -l
+```
+- If quantity of genes are not the same you can move the two folders to your desktop and cut and paste all the files from the directory with more files. 
+- When asked if you would like to overwrite the files, select no.
+- You should now have in the new directory files that are highlighted. These files should be the new files that need to be deleted.
+- Paste the names of these files into a new file on the command line and use the following command to delete these files until you have two directories with equal amounts of files or genes.
+- I know this was a lot of information and it is probably hard to follow. Watch video # **INSERT VIDEO NUMBER HERE** for a more detailed explaination.
+
+```
+#Command to nuke more of the genes so that all samples eventually have equal genes for further analysis.
+xargs rm < genesToDelete.txt
+
+```
+
 # Step 7: Delete the header line of each fasta file:
 
 ```
