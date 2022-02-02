@@ -245,32 +245,8 @@ cat *.faa* > combinedFasta.faa
 
 
 
-# Step 14: Run alignment on combined fasta file with Clustalw
-![image](https://user-images.githubusercontent.com/49656044/150466652-62016012-ea3c-4d13-b616-d25e49b28661.png)
 
-- Manual:
-http://www.clustal.org/download/clustalw_help.txt
-
-- Helpful video on how to run clustalw:
-https://www.youtube.com/watch?v=LWKsu8VqJKg
-
-```
-cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
-clustalw
-
-```
-
-
-# Step 15: View the alignment with Unipro Ugene
-![image](https://user-images.githubusercontent.com/49656044/150467410-09b70372-b7f6-4e77-ba3e-53c0d34b75ff.png)
-
-
-- Download link:
-http://ugene.net/
-
-
-# Step 16: Follow the steps at the tutorial listed below to make your tree with RAxML
-![image](https://user-images.githubusercontent.com/49656044/150468162-a95d1044-f186-492e-b160-9c1d7b41f3bb.png)
+# Step 14: Follow the steps at the tutorial listed below to make your tree with RAxML
 
 - You can skip step 1 and go straight to step 2.
 - Step 1 is used if you are starting with a vcf file and not a fasta file.
