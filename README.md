@@ -145,8 +145,12 @@ sed -i '1d' *.faa
 - For this example we will be doing this five times. Once for each group of fasta files that we have. 
 
 ```
+cat *.faa* > combinedFasta_C_sulphurascens.fna
 cat *.faa* > combinedFasta_C_weirri.fna
+cat *.faa* > combinedFasta_F_mediterranea.fna
 cat *.faa* > combinedFasta_P_lamaensis.fna
+cat *.faa* > combinedFasta_P_pini.fna
+
 ```
 # Pickup back here for video #5!!!!
 # Step 8: Move all concatenated files with .fna ending to a new directory
@@ -161,7 +165,8 @@ cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_fil
 # Step 8: Concatenate all the fasta files ending in .fna to a new fasta file ending in .faa
 
 ```
-cat *.fna* > combinedFasta_C_weirri.faa
+cat *.faa* > combinedFasta_C_sulphurascens.fna
+
 
 ```
 
