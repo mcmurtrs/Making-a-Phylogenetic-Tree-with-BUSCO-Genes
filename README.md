@@ -92,8 +92,17 @@ python3 buscoList.py summary.tsv filteredGenes.txt
 - This next bash script will loop through each single copy BUSCO directory (i.e. SAMPLE1_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences) and delete genes that didn't pass the test.
 - The only caveots are that you need do this in every busco directory so if you have a lot you might want to automate it.
 - Also make sure to edit line #4 to direct it towards the filteredGenes.txt file in your directory
-- cd to each "single_copy_busco_sequences" directory and run this script:
+- cd to each "single_copy_busco_sequences" directory 
 
+```
+cd U_maydis_genes
+cp /home/bpp/mcmurtrs/my_dir/cs_align/Busco/Tree/evol_pre_filter/deleteGenes.sh .
+./deleteGenes.sh    
+```
+
+
+- Don't forget to alter the path of line 4 if necessary to reflect the path to your filteredGenes.txt file
+- The deleteGenes.sh script looks like this:
 ```
 #!/usr/bin/env python3
 import os
@@ -121,8 +130,11 @@ ls | wc -l
 - I know this was a lot of information and it is probably hard to follow. Watch video # **INSERT VIDEO NUMBER HERE** for a more detailed explaination.
 
 ```
+#Copy the deleteThese.txt file that was made that included extra genes that aren't present in all samples that didn't get deleted for some reason:
+cp /home/bpp/mcmurtrs/my_dir/cs_align/Busco/Tree/evol_pre_filter/deleteThese.txt .
+
 #Command to nuke more of the genes so that all samples eventually have equal genes for further analysis.
-xargs rm < genesToDelete.txt
+xargs rm < deleteThese.txt
 
 ```
 
