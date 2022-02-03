@@ -162,6 +162,9 @@ cat *.faa* > combinedFasta_C_weirri.fna
 cat *.faa* > combinedFasta_F_mediterranea.fna
 cat *.faa* > combinedFasta_P_lamaensis.fna
 cat *.faa* > combinedFasta_P_pini.fna
+cat *.faa* > combinedFasta_P_noxious.fna
+cat *.faa* > combinedFasta_S_paradoxa.fna
+cat *.faa* > combinedFasta_U_maydis.fna
 
 ```
 # Pickup back here for video #5!!!!
