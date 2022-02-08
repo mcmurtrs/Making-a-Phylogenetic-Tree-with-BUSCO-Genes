@@ -118,7 +118,7 @@ for f in os.listdir('.'):
 ```
 
 
-# Step 8: Check to ensure that there are equal amounts of genes within each gene file.
+# Step 7: Check to ensure that there are equal amounts of genes within each gene file.
 - To count the number of files in a directory use:
 ```
 ls | wc -l
@@ -138,7 +138,7 @@ xargs rm < deleteThese.txt
 
 ```
 
-# Step 7: Delete the header line of each fasta file:
+# Step 8: Delete the header line of each fasta file:
 
 ```
 sed -i '1d' *.faa
@@ -153,7 +153,7 @@ sed -i '1d' *.faa
 ![image](https://user-images.githubusercontent.com/49656044/151456154-5796f228-f5e6-490d-a092-72befba8b902.png)
 
 
-# Step 8: Concatenate all the fasta files for each sample and change the ending of the file name to .fna
+# Step 9: Concatenate all the fasta files for each sample and change the ending of the file name to .fna
 - For this example we will be doing this five times. Once for each group of fasta files that we have. 
 
 ```
@@ -168,7 +168,7 @@ cat *.faa* > combinedFasta_U_maydis.fna
 
 ```
 # Pickup back here for video #5!!!!
-# Step 8: Move all concatenated files with .fna ending to a new directory
+# Step 10: Move all concatenated files with .fna ending to a new directory
 
 ```
 cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/combinedFastas
@@ -177,7 +177,7 @@ cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_fil
 ```
 
 
-# Step 8: Concatenate all the fasta files ending in .fna to a new fasta file ending in .faa
+# Step 11: Concatenate all the fasta files ending in .fna to a new fasta file ending in .faa
 
 ```
 cat *.fna* > combinedFastas.faa
@@ -185,7 +185,7 @@ cat *.fna* > combinedFastas.faa
 
 ```
 
-# Step 9: Run multiple sequence alignment with mafft
+# Step 12: Run multiple sequence alignment with mafft
 
 ```
 # Running mafft (note this might need to be run on the cluster for large numbers of samples)
@@ -201,75 +201,18 @@ SGE_Batch -c '/nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/bin/bin/mafft combine
 /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/evol_pre_filter/combinedFastas_copy
 ```
 
-# Step 10: Open file in mesquite to visually inspect it
+# Step 13: Open file in mesquite to visually inspect it
 - blah blah blah
 
-# Step 11: Export the file for RAxML using mesquite, move file back to cluster and run RAxML
+# Step 14: Export the file for RAxML using mesquite, move file back to cluster and run RAxML
 
 
-
-# EXTRA STEPS THAT ARE NOT REQUIRED BUT MAY BE USEFUL FOR OTHER ANALYSIS:
-
-
-# Step 7: Add a prefix onto the genes that passed to attach them to each sample
-- After you have finished deleted the genes we don't want add the prefix and cp all the files to a new directory called BUSCO_GENES
-
-```
-bash
-#for file in *.faa; do mv "$file" "AP13_$file"; done;
-for file in *.faa; do mv "$file" "AP7_$file"; done;
-```
-
-
-## Step 8: Adding a unique number to the beginning of each file name
-``` n=1; for f in *; do mv "$f" "$((n++))_$f"; done ```
-
-
-
-# Step 9:  Deleting the first line of each fasta file 
-``` sed -i '1d' *.faa ```
-
-
- 
-# Step 10: Adding the unique name of the file to the first line of all files
-- In order for clustalw to perform our multiple sample alignment, each fasta header needs to be unique.
-- We can perform this within bash with sed.
- 
- ``` sed -i '1F' *.faa ```
-
-## Step 11: Adding '>' to the first line of each file
-- This is again done for formatting purposes for clustalw. 
-- Clustalw will ignore the first line that starts with a '>' symbol.
-- The first line of our header should then look like the screenshot below.
-- We have the carrot symbol, the unique id number, and our sample ID so we know what gene belongs to each sample. 
-
-``` sed -i '1s/^/>/' * ```
 
 ![image](https://user-images.githubusercontent.com/49656044/150464632-c78b89fa-1a08-4abe-99bd-d09809aa3d9d.png)
 
 
-## Step 12: Copy the freshly altered fasta files to the central directory called  
- 
- ```
- cd /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/Fastas
- cp /nfs1/BPP/LeBoldus_Lab/user_folders/mcmurtrs/cs_align/Busco/Tree/C2_Busco/run_basidiomycota_odb10/busco_sequences/single_copy_busco_sequences/*.faa .
 
- ```
- 
-## Step 13: Concatenate all fasta files into one combined fasta file
-- If everythin worked correctly, your rad new fasta file should look something similar to the screenshot below.
-- We are now ready to move on to the alignment with clustalw!!
-``` 
-cat *.faa* > combinedFasta.faa
-
-```
-![image](https://user-images.githubusercontent.com/49656044/150466416-cbe637d2-d316-496b-b2d3-b29c588f538b.png)
-
-
-
-
-
-# Step 14: Follow the steps at the tutorial listed below to make your tree with RAxML
+# Step 15: Follow the steps at the tutorial listed below to make your tree with RAxML
 
 - You can skip step 1 and go straight to step 2.
 - Step 1 is used if you are starting with a vcf file and not a fasta file.
