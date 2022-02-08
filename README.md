@@ -189,7 +189,7 @@ cat *.fna* > combinedFastas.faa
 
 ```
 # Running mafft (note this might need to be run on the cluster for large numbers of samples)
-mafft combinedFasta_C_weirri.faa > combinedFastaFINAL.msa
+mafft combinedFastas.faa > combinedFastaFINAL.msa
 
 # An example of what it looks like being run on the cluster at Oregon State University using current mafft version (mafft v. 7)
 SGE_Batch -c 'mafft combinedFasta_C_weirri.faa > combinedFastaFINAL_v6.msa' -P 20 -r mafft_v6
