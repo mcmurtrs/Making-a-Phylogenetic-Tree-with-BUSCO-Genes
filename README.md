@@ -180,7 +180,7 @@ cat *.faa* > combinedFasta_S_paradoxa.fna
 cat *.faa* > combinedFasta_U_maydis.fna
 
 ```
-# Pickup back here for video #5!!!!
+
 # Step 10: Move all concatenated files with .fna ending to a new directory
 
 ```
