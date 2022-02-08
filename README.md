@@ -11,9 +11,22 @@ The data contained in this tutorial includes five seperate but closely related s
 - Phellinus noxious
 - Porodaedalea pini
 
-## Videos showing the steps
+## Tutorial videos showing the steps
 ### Steps 1 and 2:
 https://www.youtube.com/watch?v=gilA49YwSM4
+
+### Steps 3 amd 4:
+
+https://www.youtube.com/watch?v=6KDvI74Ogzw
+
+### Steps 5 and 6:
+https://www.youtube.com/watch?v=ikEE6GGw0_0&t=43s
+
+### Steps 7-11:
+https://www.youtube.com/watch?v=pyMmFCCj1QA
+
+### Final video tutorial
+https://www.youtube.com/watch?v=eFb1MJUNGgg
 
 A majority of the steps come from the following tutorials:
 
