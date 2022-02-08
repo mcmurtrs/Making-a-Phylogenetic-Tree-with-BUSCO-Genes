@@ -15,7 +15,7 @@ The data contained in this tutorial includes five seperate but closely related s
 ### Steps 1 and 2:
 https://www.youtube.com/watch?v=gilA49YwSM4
 
-### Steps 3 amd 4:
+### Steps 3 and 4:
 
 https://www.youtube.com/watch?v=6KDvI74Ogzw
 
