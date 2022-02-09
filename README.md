@@ -152,6 +152,7 @@ xargs rm < deleteThese.txt
 ```
 
 # Step 8: Delete the header line of each fasta file:
+**There is a shortcut for doing this within multiple directories below the initial steps:**
 
 ```
 sed -i '1d' *.faa
@@ -164,6 +165,20 @@ sed -i '1d' *.faa
 - We want them all to look like this:
 
 ![image](https://user-images.githubusercontent.com/49656044/151456154-5796f228-f5e6-490d-a092-72befba8b902.png)
+
+
+### Shortcut to do this within multiple directories at once:
+
+```
+#Testing
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd" \;
+
+
+# In action
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && sed -i '1d' *.faa" \;
+
+
+```
 
 
 # Step 9: Concatenate all the fasta files for each sample and change the ending of the file name to .fna
