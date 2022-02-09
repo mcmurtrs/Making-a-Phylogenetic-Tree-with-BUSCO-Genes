@@ -201,15 +201,14 @@ cat *.faa* > combinedFasta_C_neoformans.fna
 cat *.faa* > combinedFasta_D_primogenitus.fna
 cat *.faa* > combinedFasta_H_annosum.fna
 cat *.faa* > combinedFasta_L_bicolor.fna
+cat *.faa* > combinedFasta_P_indica.fna
+cat *.faa* > combinedFasta_P_ostreatus.fna
+cat *.faa* > combinedFasta_S_commune.fna
+cat *.faa* > combinedFasta_S_niveocremeum.fna
+cat *.faa* > combinedFasta_T_mesenterica.fna
 
 
-A_bisporus_genes_ALL       F_mediterranea_genes_ALL  P_pini_genes_ALL
-A_subglabra_genes_ALL      H_annosum_genes_ALL       S_commune_genes_ALL
-C_cinerea_genes_ALL        L_bicolor_genes_ALL       S_niveocremeum_genes_ALL
-C_neoformans_genes_ALL     P_indica_genes_ALL        S_paradoxa_genes_ALL
-C_sulphurascens_genes_ALL  P_lamaensis_genes_ALL     T_mesenterica_genes_ALL
-C_weirii_PFC504_ALL        P_noxious_genes_ALL       U_maydis_genes_ALL
-D_primogenitus_genes_ALL   P_ostreatus_genes_ALL
+
 
 ```
 
